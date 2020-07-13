@@ -40,17 +40,17 @@ class TicTacToe:
         for directionPair in directionPairs:
             count = 1
             for direction in directionPair:
-                multipler = 1
+                multiplier = 1
                 while True:
-                    newY = y + direction[0] * multipler
-                    newX = x + direction[1] * multipler
+                    newY = y + direction[0] * multiplier
+                    newX = x + direction[1] * multiplier
                     if newX < 0 or newX >= self.width or newY < 0 or newY >= self.height:
                         break
                     if self.board[newY][newX] != player:
                         break
                     count += 1
-                    multipler += 1
-            if count == self.k:
+                    multiplier += 1
+            if count >= self.k:
                 return player
         return None
 
